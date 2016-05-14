@@ -1,9 +1,12 @@
 {
-  "name": "laravel/laravel",
-  "description": "The Laravel Framework.",
+  "name": "tankerkiller125/newscms",
+  "description": "NewsCMS",
   "keywords": [
-    "framework",
-    "laravel"
+    "content management",
+    "laravel",
+    "newscms",
+    "news",
+    "cms"
   ],
   "license": "MIT",
   "type": "project",
@@ -14,7 +17,8 @@
     "pusher/pusher-php-server": "^2.3",
     "jenssegers/rollbar": "^1.5",
     "barryvdh/laravel-ide-helper": "dev-master",
-    "doctrine/dbal": "^2.5"
+    "doctrine/dbal": "^2.5",
+    "pingpong/themes": "dev-master"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
