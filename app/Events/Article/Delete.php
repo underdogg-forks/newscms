@@ -3,9 +3,10 @@
 namespace App\Events\Article;
 
 use App\Events\Event;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Queue\SerializesModels;
 
-class Delete extends Event
+class Delete extends Event implements ShouldBroadcast
 {
     use SerializesModels;
 
@@ -26,6 +27,16 @@ class Delete extends Event
      */
     public function broadcastOn()
     {
-        return [];
+        return ['article'];
+    }
+
+    /**
+     * Get event name
+     *
+     * @return string
+     */
+    public function broadcastAs()
+    {
+        return 'deleted';
     }
 }

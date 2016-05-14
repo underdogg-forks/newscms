@@ -3,12 +3,12 @@
 namespace App\Events\Article;
 
 use App\Events\Event;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Queue\SerializesModels;
 
-class Publish extends Event
+class Publish extends Event implements ShouldBroadcast
 {
     use SerializesModels;
-
     /**
      * Create a new event instance.
      *
@@ -26,6 +26,16 @@ class Publish extends Event
      */
     public function broadcastOn()
     {
-        return [];
+        return ['article'];
+    }
+
+    /**
+     * Get the event name
+     *
+     * @return string
+     */
+    public function broadcastAs()
+    {
+        return 'published';
     }
 }
