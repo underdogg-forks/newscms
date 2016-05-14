@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace NewsCMS\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use NewsCMS\Http\Controllers\Controller;
 
 class AuthController extends Controller
 {

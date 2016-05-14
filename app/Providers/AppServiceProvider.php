@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace NewsCMS\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

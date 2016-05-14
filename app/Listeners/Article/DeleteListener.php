@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Listeners\Article;
+namespace NewsCMS\Listeners\Article;
 
-use App\Events\Article\Delete;
+use NewsCMS\Events\Article\Delete;
 
 class DeleteListener
 {

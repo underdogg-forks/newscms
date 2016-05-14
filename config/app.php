@@ -151,17 +151,17 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        NewsCMS\Providers\AppServiceProvider::class,
+        NewsCMS\Providers\AuthServiceProvider::class,
+        NewsCMS\Providers\EventServiceProvider::class,
+        NewsCMS\Providers\RouteServiceProvider::class,
 
         /*
          * Custom Stuff
          */
         Jenssegers\Rollbar\RollbarServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-
+        Pingpong\Themes\ThemesServiceProvider::class,
     ],
 
     /*
@@ -208,6 +208,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        /*
+         * Custom Stuff
+         */
+        'Theme' => Pingpong\Themes\ThemeFacade::class,
     ],
 
 ];

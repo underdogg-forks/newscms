@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace NewsCMS;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
- * App\User
+ * NewsCMS\User
  *
  * @mixin \Eloquent
  */

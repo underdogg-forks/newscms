@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Events\Article;
+namespace NewsCMS\Events\Article;
 
-use App\Events\Event;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Queue\SerializesModels;
+use NewsCMS\Events\Event;
 
 class Delete extends Event implements ShouldBroadcast
 {

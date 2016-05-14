@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Listeners\Article;
+namespace NewsCMS\Listeners\Article;
 
-use App\Events\Article\Create;
+use NewsCMS\Events\Article\Create;
 
 class CreateListener
 {
