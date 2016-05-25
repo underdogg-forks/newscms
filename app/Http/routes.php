@@ -12,6 +12,6 @@
 */
 Route::group(['middleware' => 'web'], function () {
     Route::get('/', function () {
-        return view('welcome');
+        return Theme::view('welcome');
     });
 });

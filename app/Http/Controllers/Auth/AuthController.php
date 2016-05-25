@@ -6,5 +6,18 @@ use NewsCMS\Http\Controllers\Controller;
 
 class AuthController extends Controller
 {
+    public function login()
+    {
 
+    }
+
+    public function register()
+    {
+
+    }
+
+    public function activate()
+    {
+
+    }
 }
