@@ -2464,7 +2464,7 @@ namespace {
         /**
          * Get the Redis database instance.
          *
-         * @return \Illuminate\Redis\Database
+         * @return \Illuminate\Redis\Database 
          * @static 
          */
         public static function getRedis()
@@ -2487,7 +2487,7 @@ namespace {
          * Set the cache key prefix.
          *
          * @param string $prefix
-         * @return void
+         * @return void 
          * @static 
          */
         public static function setPrefix($prefix)
@@ -7165,7 +7165,7 @@ namespace {
          * @param string $payload
          * @param int $delay
          * @param int $attempts
-         * @return void
+         * @return void 
          * @static 
          */
         public static function release($queue, $payload, $delay, $attempts)
@@ -7190,7 +7190,7 @@ namespace {
          *
          * @param string $queue
          * @param string $job
-         * @return void
+         * @return void 
          * @static 
          */
         public static function deleteReserved($queue, $job)
@@ -7203,7 +7203,7 @@ namespace {
          *
          * @param string $from
          * @param string $to
-         * @return void
+         * @return void 
          * @static 
          */
         public static function migrateExpiredJobs($from, $to)
@@ -7214,7 +7214,7 @@ namespace {
         /**
          * Get the underlying Redis instance.
          *
-         * @return \Illuminate\Redis\Database
+         * @return \Illuminate\Redis\Database 
          * @static 
          */
         public static function getRedis()
@@ -7225,7 +7225,7 @@ namespace {
         /**
          * Get the expiration time in seconds.
          *
-         * @return int|null
+         * @return int|null 
          * @static 
          */
         public static function getExpire()
@@ -7237,7 +7237,7 @@ namespace {
          * Set the expiration time in seconds.
          *
          * @param int|null $seconds
-         * @return void
+         * @return void 
          * @static 
          */
         public static function setExpire($seconds)
@@ -12282,7 +12282,7 @@ namespace {
          * Find the specified theme.
          *
          * @param string $search
-         * @return \Pingpong\Themes\Theme|null
+         * @return \Pingpong\Themes\Theme|null 
          * @static 
          */
         public static function find($search)
@@ -12294,7 +12294,7 @@ namespace {
          * Get theme path by given theme name.
          *
          * @param $theme
-         * @return null|string
+         * @return null|string 
          * @static 
          */
         public static function getThemePath($theme)
@@ -12305,7 +12305,7 @@ namespace {
         /**
          * Get current theme.
          *
-         * @return string
+         * @return string 
          * @static 
          */
         public static function getCurrent()
@@ -12317,7 +12317,7 @@ namespace {
          * Set current theme.
          *
          * @param string $current
-         * @return $this
+         * @return $this 
          * @static 
          */
         public static function setCurrent($current)
@@ -12329,7 +12329,7 @@ namespace {
          * The alias "setCurrent" method.
          *
          * @param $theme
-         * @return $this
+         * @return $this 
          * @static 
          */
         public static function set($theme)
@@ -12340,7 +12340,7 @@ namespace {
         /**
          * Get all themes.
          *
-         * @return array
+         * @return array 
          * @static 
          */
         public static function all()
@@ -12351,7 +12351,7 @@ namespace {
         /**
          * Get all themes.
          *
-         * @return array
+         * @return array 
          * @static 
          */
         public static function scan()
@@ -12362,7 +12362,7 @@ namespace {
         /**
          * Get cached themes.
          *
-         * @return array
+         * @return array 
          * @static 
          */
         public static function getCached()
@@ -12373,7 +12373,7 @@ namespace {
         /**
          * Determine whether the cache is enabled.
          *
-         * @return bool
+         * @return bool 
          * @static 
          */
         public static function useCache()
@@ -12384,7 +12384,7 @@ namespace {
         /**
          * Get cache key.
          *
-         * @return string
+         * @return string 
          * @static 
          */
         public static function getCacheKey()
@@ -12395,7 +12395,7 @@ namespace {
         /**
          * Get cache lifetime.
          *
-         * @return int
+         * @return int 
          * @static 
          */
         public static function getCacheLifetime()
@@ -12406,7 +12406,7 @@ namespace {
         /**
          * Get cache status.
          *
-         * @return bool
+         * @return bool 
          * @static 
          */
         public static function getCacheStatus()
@@ -12437,7 +12437,7 @@ namespace {
         /**
          * Convert all themes to an array.
          *
-         * @return array
+         * @return array 
          * @static 
          */
         public static function toArray()
@@ -12448,7 +12448,7 @@ namespace {
         /**
          * Convert all themes to a json string.
          *
-         * @return string
+         * @return string 
          * @static 
          */
         public static function toJson()
@@ -12460,7 +12460,7 @@ namespace {
          * Check whether the given theme in all themes.
          *
          * @param $theme
-         * @return bool
+         * @return bool 
          * @static 
          */
         public static function has($theme)
@@ -12472,7 +12472,7 @@ namespace {
          * Alias for "has" method.
          *
          * @param $theme
-         * @return bool
+         * @return bool 
          * @static 
          */
         public static function exists($theme)
@@ -12484,7 +12484,7 @@ namespace {
          * Set theme path on runtime.
          *
          * @param $path
-         * @return self
+         * @return self 
          * @static 
          */
         public static function setPath($path)
@@ -12495,7 +12495,7 @@ namespace {
         /**
          * Get theme path.
          *
-         * @return mixed
+         * @return mixed 
          * @static 
          */
         public static function getPath()
@@ -12509,7 +12509,7 @@ namespace {
          * @param $view
          * @param array $data
          * @param array $mergeData
-         * @return mixed
+         * @return mixed 
          * @static 
          */
         public static function view($view, $data = array(), $mergeData = array())
@@ -12522,7 +12522,7 @@ namespace {
          *
          * @param $asset
          * @param $secure
-         * @return \Pingpong\Themes\asset
+         * @return \Pingpong\Themes\asset 
          * @static 
          */
         public static function asset($asset, $secure = null)
@@ -12534,7 +12534,7 @@ namespace {
          * Get secure asset
          *
          * @param $asset
-         * @return \Pingpong\Themes\asset
+         * @return \Pingpong\Themes\asset 
          * @static 
          */
         public static function secure_asset($asset)
@@ -12558,7 +12558,7 @@ namespace {
          *
          * @param $key
          * @param null $default
-         * @return mixed
+         * @return mixed 
          * @static 
          */
         public static function config($key, $default = null)
@@ -12572,7 +12572,7 @@ namespace {
          * @param $key
          * @param array $replace
          * @param null $locale
-         * @return string
+         * @return string 
          * @static 
          */
         public static function lang($key, $replace = array(), $locale = null)
@@ -12584,7 +12584,7 @@ namespace {
          * Get theme namespace.
          *
          * @param string $key
-         * @return string
+         * @return string 
          * @static 
          */
         public static function getNamespace($key)
@@ -12610,11 +12610,11 @@ namespace {
 
     class Activation extends \Cartalyst\Sentinel\Laravel\Facades\Activation
     {
-
+        
         /**
          * {@inheritDoc}
          *
-         * @static
+         * @static 
          */
         public static function create($user)
         {
@@ -12624,7 +12624,7 @@ namespace {
         /**
          * {@inheritDoc}
          *
-         * @static
+         * @static 
          */
         public static function exists($user, $code = null)
         {
@@ -12634,7 +12634,7 @@ namespace {
         /**
          * {@inheritDoc}
          *
-         * @static
+         * @static 
          */
         public static function complete($user, $code)
         {
@@ -12644,7 +12644,7 @@ namespace {
         /**
          * {@inheritDoc}
          *
-         * @static
+         * @static 
          */
         public static function completed($user)
         {
@@ -12654,7 +12654,7 @@ namespace {
         /**
          * {@inheritDoc}
          *
-         * @static
+         * @static 
          */
         public static function remove($user)
         {
@@ -12664,7 +12664,7 @@ namespace {
         /**
          * {@inheritDoc}
          *
-         * @static
+         * @static 
          */
         public static function removeExpired()
         {
@@ -12676,7 +12676,7 @@ namespace {
          *
          * @param array $data
          * @return mixed
-         * @static
+         * @static 
          */
         public static function createModel($data = array())
         {
@@ -12687,7 +12687,7 @@ namespace {
          * Returns the model.
          *
          * @return string
-         * @static
+         * @static 
          */
         public static function getModel()
         {
@@ -12699,7 +12699,7 @@ namespace {
          *
          * @param string $model
          * @return $this
-         * @static
+         * @static 
          */
         public static function setModel($model)
         {
@@ -12711,11 +12711,11 @@ namespace {
 
     class Reminder extends \Cartalyst\Sentinel\Laravel\Facades\Reminder
     {
-
+        
         /**
          * {@inheritDoc}
          *
-         * @static
+         * @static 
          */
         public static function create($user)
         {
@@ -12725,7 +12725,7 @@ namespace {
         /**
          * {@inheritDoc}
          *
-         * @static
+         * @static 
          */
         public static function exists($user, $code = null)
         {
@@ -12735,7 +12735,7 @@ namespace {
         /**
          * {@inheritDoc}
          *
-         * @static
+         * @static 
          */
         public static function complete($user, $code, $password)
         {
@@ -12745,7 +12745,7 @@ namespace {
         /**
          * {@inheritDoc}
          *
-         * @static
+         * @static 
          */
         public static function removeExpired()
         {
@@ -12757,7 +12757,7 @@ namespace {
          *
          * @param array $data
          * @return mixed
-         * @static
+         * @static 
          */
         public static function createModel($data = array())
         {
@@ -12768,7 +12768,7 @@ namespace {
          * Returns the model.
          *
          * @return string
-         * @static
+         * @static 
          */
         public static function getModel()
         {
@@ -12780,7 +12780,7 @@ namespace {
          *
          * @param string $model
          * @return $this
-         * @static
+         * @static 
          */
         public static function setModel($model)
         {
@@ -12792,16 +12792,16 @@ namespace {
 
     class Sentinel extends \Cartalyst\Sentinel\Laravel\Facades\Sentinel
     {
-
+        
         /**
          * Registers a user. You may provide a callback to occur before the user
          * is saved, or provide a true boolean as a shortcut to activation.
          *
          * @param array $credentials
          * @param \Closure|bool $callback
-         * @return \Cartalyst\Sentinel\Users\UserInteface|bool
+         * @return \Cartalyst\Sentinel\Users\UserInteface|bool 
          * @throws \InvalidArgumentException
-         * @static
+         * @static 
          */
         public static function register($credentials, $callback = null)
         {
@@ -12813,7 +12813,7 @@ namespace {
          *
          * @param array $credentials
          * @return \Cartalyst\Sentinel\Users\UserInteface|bool
-         * @static
+         * @static 
          */
         public static function registerAndActivate($credentials)
         {
@@ -12824,9 +12824,9 @@ namespace {
          * Activates the given user.
          *
          * @param mixed $user
-         * @return bool
+         * @return bool 
          * @throws \InvalidArgumentException
-         * @static
+         * @static 
          */
         public static function activate($user)
         {
@@ -12837,7 +12837,7 @@ namespace {
          * Checks to see if a user is logged in.
          *
          * @return \Cartalyst\Sentinel\Users\UserInterface|bool
-         * @static
+         * @static 
          */
         public static function check()
         {
@@ -12848,7 +12848,7 @@ namespace {
          * Checks to see if a user is logged in, bypassing checkpoints
          *
          * @return \Cartalyst\Sentinel\Users\UserInterface|bool
-         * @static
+         * @static 
          */
         public static function forceCheck()
         {
@@ -12859,7 +12859,7 @@ namespace {
          * Checks if we are currently a guest.
          *
          * @return bool
-         * @static
+         * @static 
          */
         public static function guest()
         {
@@ -12873,7 +12873,7 @@ namespace {
          * @param bool $remember
          * @param bool $login
          * @return \Cartalyst\Sentinel\Users\UserInterface|bool
-         * @static
+         * @static 
          */
         public static function authenticate($credentials, $remember = false, $login = true)
         {
@@ -12885,7 +12885,7 @@ namespace {
          *
          * @param \Cartalyst\Sentinel\Users\UserInterface|array $credentials
          * @return \Cartalyst\Sentinel\Users\UserInterface|bool
-         * @static
+         * @static 
          */
         public static function authenticateAndRemember($credentials)
         {
@@ -12898,7 +12898,7 @@ namespace {
          * @param \Cartalyst\Sentinel\Users\UserInterface|array $credentials
          * @param bool $remember
          * @return \Cartalyst\Sentinel\Users\UserInterface|bool
-         * @static
+         * @static 
          */
         public static function forceAuthenticate($credentials, $remember = false)
         {
@@ -12910,7 +12910,7 @@ namespace {
          *
          * @param \Cartalyst\Sentinel\Users\UserInterface|array $credentials
          * @return \Cartalyst\Sentinel\Users\UserInterface|bool
-         * @static
+         * @static 
          */
         public static function forceAuthenticateAndRemember($credentials)
         {
@@ -12922,7 +12922,7 @@ namespace {
          *
          * @param \Cartalyst\Sentinel\Users\UserInterface|array $credentials
          * @return \Cartalyst\Sentinel\Users\UserInterface|bool
-         * @static
+         * @static 
          */
         public static function stateless($credentials)
         {
@@ -12933,7 +12933,7 @@ namespace {
          * Attempt to authenticate using HTTP Basic Auth.
          *
          * @return mixed
-         * @static
+         * @static 
          */
         public static function basic()
         {
@@ -12944,7 +12944,7 @@ namespace {
          * Returns the request credentials.
          *
          * @return array
-         * @static
+         * @static 
          */
         public static function getRequestCredentials()
         {
@@ -12956,7 +12956,7 @@ namespace {
          *
          * @param \Closure $requestCredentials
          * @return void
-         * @static
+         * @static 
          */
         public static function setRequestCredentials($requestCredentials)
         {
@@ -12966,9 +12966,9 @@ namespace {
         /**
          * Sends a response when HTTP basic authentication fails.
          *
-         * @return mixed
+         * @return mixed 
          * @throws \RuntimeException
-         * @static
+         * @static 
          */
         public static function getBasicResponse()
         {
@@ -12980,7 +12980,7 @@ namespace {
          *
          * @param \Closure $basicResonse
          * @return void
-         * @static
+         * @static 
          */
         public static function creatingBasicResponse($basicResponse)
         {
@@ -12993,7 +12993,7 @@ namespace {
          * @param \Cartalyst\Sentinel\Users\UserInterface $user
          * @param bool $remember
          * @return \Cartalyst\Sentinel\Users\UserInterface|bool
-         * @static
+         * @static 
          */
         public static function login($user, $remember = false)
         {
@@ -13005,7 +13005,7 @@ namespace {
          *
          * @param \Cartalyst\Sentinel\Users\UserInterface $user
          * @return \Cartalyst\Sentinel\Users\UserInterface|bool
-         * @static
+         * @static 
          */
         public static function loginAndRemember($user)
         {
@@ -13018,7 +13018,7 @@ namespace {
          * @param \Cartalyst\Sentinel\Users\UserInterface $user
          * @param bool $everywhere
          * @return bool
-         * @static
+         * @static 
          */
         public static function logout($user = null, $everywhere = false)
         {
@@ -13031,7 +13031,7 @@ namespace {
          * @param \Closure $callback
          * @param array $checkpoints
          * @return mixed
-         * @static
+         * @static 
          */
         public static function bypassCheckpoints($callback, $checkpoints = array())
         {
@@ -13042,7 +13042,7 @@ namespace {
          * Checks if checkpoints are enabled.
          *
          * @return bool
-         * @static
+         * @static 
          */
         public static function checkpointsStatus()
         {
@@ -13053,7 +13053,7 @@ namespace {
          * Enables checkpoints.
          *
          * @return void
-         * @static
+         * @static 
          */
         public static function enableCheckpoints()
         {
@@ -13064,7 +13064,7 @@ namespace {
          * Disables checkpoints.
          *
          * @return void
-         * @static
+         * @static 
          */
         public static function disableCheckpoints()
         {
@@ -13077,7 +13077,7 @@ namespace {
          * @param string $key
          * @param \Cartalyst\Sentinel\Checkpoints\CheckpointInterface $checkpoint
          * @return void
-         * @static
+         * @static 
          */
         public static function addCheckpoint($key, $checkpoint)
         {
@@ -13089,7 +13089,7 @@ namespace {
          *
          * @param string $key
          * @return void
-         * @static
+         * @static 
          */
         public static function removeCheckpoint($key)
         {
@@ -13101,7 +13101,7 @@ namespace {
          *
          * @param bool $check
          * @return \Cartalyst\Sentinel\Users\UserInterface
-         * @static
+         * @static 
          */
         public static function getUser($check = true)
         {
@@ -13113,7 +13113,7 @@ namespace {
          *
          * @param \Cartalyst\Sentinel\Users\UserInterface $user
          * @return void
-         * @static
+         * @static 
          */
         public static function setUser($user)
         {
@@ -13124,7 +13124,7 @@ namespace {
          * Returns the user repository.
          *
          * @return \Cartalyst\Sentinel\Users\UserRepositoryInterface
-         * @static
+         * @static 
          */
         public static function getUserRepository()
         {
@@ -13136,7 +13136,7 @@ namespace {
          *
          * @param \Cartalyst\Sentinel\Users\UserRepositoryInterface $users
          * @return void
-         * @static
+         * @static 
          */
         public static function setUserRepository($users)
         {
@@ -13147,7 +13147,7 @@ namespace {
          * Returns the role repository.
          *
          * @return \Cartalyst\Sentinel\Roles\RoleRepositoryInterface
-         * @static
+         * @static 
          */
         public static function getRoleRepository()
         {
@@ -13159,7 +13159,7 @@ namespace {
          *
          * @param \Cartalyst\Sentinel\Roles\RoleRepositoryInterface $roles
          * @return void
-         * @static
+         * @static 
          */
         public static function setRoleRepository($roles)
         {
@@ -13170,7 +13170,7 @@ namespace {
          * Returns the persistences repository.
          *
          * @return \Cartalyst\Sentinel\Persistences\PersistenceRepositoryInterface
-         * @static
+         * @static 
          */
         public static function getPersistenceRepository()
         {
@@ -13182,7 +13182,7 @@ namespace {
          *
          * @param \Cartalyst\Sentinel\Persistences\PersistenceRepositoryInterface $persistences
          * @return void
-         * @static
+         * @static 
          */
         public static function setPersistenceRepository($persistences)
         {
@@ -13193,7 +13193,7 @@ namespace {
          * Returns the activations repository.
          *
          * @return \Cartalyst\Sentinel\Activations\ActivationRepositoryInterface
-         * @static
+         * @static 
          */
         public static function getActivationRepository()
         {
@@ -13205,7 +13205,7 @@ namespace {
          *
          * @param \Cartalyst\Sentinel\Activations\ActivationRepositoryInterface $activations
          * @return void
-         * @static
+         * @static 
          */
         public static function setActivationRepository($activations)
         {
@@ -13216,7 +13216,7 @@ namespace {
          * Returns the reminders repository.
          *
          * @return \Cartalyst\Sentinel\Reminders\ReminderRepositoryInterface
-         * @static
+         * @static 
          */
         public static function getReminderRepository()
         {
@@ -13228,7 +13228,7 @@ namespace {
          *
          * @param \Cartalyst\Sentinel\Reminders\ReminderRepositoryInterface $reminders
          * @return void
-         * @static
+         * @static 
          */
         public static function setReminderRepository($reminders)
         {
@@ -13239,7 +13239,7 @@ namespace {
          * Returns the event dispatcher.
          *
          * @return \Illuminate\Events\Dispatcher
-         * @static
+         * @static 
          */
         public static function getDispatcher()
         {
@@ -13251,7 +13251,7 @@ namespace {
          *
          * @param \Illuminate\Events\Dispatcher $dispatcher
          * @return $this
-         * @static
+         * @static 
          */
         public static function setDispatcher($dispatcher)
         {
@@ -13262,7 +13262,7 @@ namespace {
          * Returns the event dispatcher status.
          *
          * @return bool
-         * @static
+         * @static 
          */
         public static function getDispatcherStatus()
         {
@@ -13274,7 +13274,7 @@ namespace {
          *
          * @param bool $status
          * @return $this
-         * @static
+         * @static 
          */
         public static function setDispatcherStatus($status)
         {
@@ -13285,7 +13285,7 @@ namespace {
          * Enables the event dispatcher.
          *
          * @return $this
-         * @static
+         * @static 
          */
         public static function enableDispatcher()
         {
@@ -13296,11 +13296,980 @@ namespace {
          * Disables the event dispatcher.
          *
          * @return $this
-         * @static
+         * @static 
          */
         public static function disableDispatcher()
         {
             return \Cartalyst\Sentinel\Sentinel::disableDispatcher();
+        }
+
+    }
+
+
+    class Form extends \Collective\Html\FormFacade
+    {
+
+        /**
+         * Open up a new HTML form.
+         *
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function open($options = array())
+        {
+            return \Collective\Html\FormBuilder::open($options);
+        }
+
+        /**
+         * Create a new model based form builder.
+         *
+         * @param mixed $model
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function model($model, $options = array())
+        {
+            return \Collective\Html\FormBuilder::model($model, $options);
+        }
+
+        /**
+         * Set the model instance on the form builder.
+         *
+         * @param mixed $model
+         * @return void
+         * @static
+         */
+        public static function setModel($model)
+        {
+            \Collective\Html\FormBuilder::setModel($model);
+        }
+
+        /**
+         * Close the current form.
+         *
+         * @return string
+         * @static
+         */
+        public static function close()
+        {
+            return \Collective\Html\FormBuilder::close();
+        }
+
+        /**
+         * Generate a hidden field with the current CSRF token.
+         *
+         * @return string
+         * @static
+         */
+        public static function token()
+        {
+            return \Collective\Html\FormBuilder::token();
+        }
+
+        /**
+         * Create a form label element.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function label($name, $value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::label($name, $value, $options);
+        }
+
+        /**
+         * Create a form input field.
+         *
+         * @param string $type
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function input($type, $name, $value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::input($type, $name, $value, $options);
+        }
+
+        /**
+         * Create a text input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function text($name, $value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::text($name, $value, $options);
+        }
+
+        /**
+         * Create a password input field.
+         *
+         * @param string $name
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function password($name, $options = array())
+        {
+            return \Collective\Html\FormBuilder::password($name, $options);
+        }
+
+        /**
+         * Create a hidden input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function hidden($name, $value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::hidden($name, $value, $options);
+        }
+
+        /**
+         * Create an e-mail input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function email($name, $value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::email($name, $value, $options);
+        }
+
+        /**
+         * Create a tel input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function tel($name, $value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::tel($name, $value, $options);
+        }
+
+        /**
+         * Create a number input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function number($name, $value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::number($name, $value, $options);
+        }
+
+        /**
+         * Create a date input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function date($name, $value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::date($name, $value, $options);
+        }
+
+        /**
+         * Create a datetime input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function datetime($name, $value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::datetime($name, $value, $options);
+        }
+
+        /**
+         * Create a datetime-local input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function datetimeLocal($name, $value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::datetimeLocal($name, $value, $options);
+        }
+
+        /**
+         * Create a time input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function time($name, $value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::time($name, $value, $options);
+        }
+
+        /**
+         * Create a url input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function url($name, $value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::url($name, $value, $options);
+        }
+
+        /**
+         * Create a file input field.
+         *
+         * @param string $name
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function file($name, $options = array())
+        {
+            return \Collective\Html\FormBuilder::file($name, $options);
+        }
+
+        /**
+         * Create a textarea input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function textarea($name, $value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::textarea($name, $value, $options);
+        }
+
+        /**
+         * Create a select box field.
+         *
+         * @param string $name
+         * @param array $list
+         * @param string $selected
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function select($name, $list = array(), $selected = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::select($name, $list, $selected, $options);
+        }
+
+        /**
+         * Create a select range field.
+         *
+         * @param string $name
+         * @param string $begin
+         * @param string $end
+         * @param string $selected
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function selectRange($name, $begin, $end, $selected = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::selectRange($name, $begin, $end, $selected, $options);
+        }
+
+        /**
+         * Create a select year field.
+         *
+         * @param string $name
+         * @param string $begin
+         * @param string $end
+         * @param string $selected
+         * @param array $options
+         * @return mixed
+         * @static
+         */
+        public static function selectYear()
+        {
+            return \Collective\Html\FormBuilder::selectYear();
+        }
+
+        /**
+         * Create a select month field.
+         *
+         * @param string $name
+         * @param string $selected
+         * @param array $options
+         * @param string $format
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function selectMonth($name, $selected = null, $options = array(), $format = '%B')
+        {
+            return \Collective\Html\FormBuilder::selectMonth($name, $selected, $options, $format);
+        }
+
+        /**
+         * Get the select option for the given value.
+         *
+         * @param string $display
+         * @param string $value
+         * @param string $selected
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function getSelectOption($display, $value, $selected)
+        {
+            return \Collective\Html\FormBuilder::getSelectOption($display, $value, $selected);
+        }
+
+        /**
+         * Create a checkbox input field.
+         *
+         * @param string $name
+         * @param mixed $value
+         * @param bool $checked
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function checkbox($name, $value = 1, $checked = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::checkbox($name, $value, $checked, $options);
+        }
+
+        /**
+         * Create a radio button input field.
+         *
+         * @param string $name
+         * @param mixed $value
+         * @param bool $checked
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function radio($name, $value = null, $checked = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::radio($name, $value, $checked, $options);
+        }
+
+        /**
+         * Create a HTML reset input element.
+         *
+         * @param string $value
+         * @param array $attributes
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function reset($value, $attributes = array())
+        {
+            return \Collective\Html\FormBuilder::reset($value, $attributes);
+        }
+
+        /**
+         * Create a HTML image input element.
+         *
+         * @param string $url
+         * @param string $name
+         * @param array $attributes
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function image($url, $name = null, $attributes = array())
+        {
+            return \Collective\Html\FormBuilder::image($url, $name, $attributes);
+        }
+
+        /**
+         * Create a color input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function color($name, $value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::color($name, $value, $options);
+        }
+
+        /**
+         * Create a submit button element.
+         *
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function submit($value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::submit($value, $options);
+        }
+
+        /**
+         * Create a button element.
+         *
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function button($value = null, $options = array())
+        {
+            return \Collective\Html\FormBuilder::button($value, $options);
+        }
+
+        /**
+         * Get the ID attribute for a field name.
+         *
+         * @param string $name
+         * @param array $attributes
+         * @return string
+         * @static
+         */
+        public static function getIdAttribute($name, $attributes)
+        {
+            return \Collective\Html\FormBuilder::getIdAttribute($name, $attributes);
+        }
+
+        /**
+         * Get the value that should be assigned to the field.
+         *
+         * @param string $name
+         * @param string $value
+         * @return mixed
+         * @static
+         */
+        public static function getValueAttribute($name, $value = null)
+        {
+            return \Collective\Html\FormBuilder::getValueAttribute($name, $value);
+        }
+
+        /**
+         * Get a value from the session's old input.
+         *
+         * @param string $name
+         * @return mixed
+         * @static
+         */
+        public static function old($name)
+        {
+            return \Collective\Html\FormBuilder::old($name);
+        }
+
+        /**
+         * Determine if the old input is empty.
+         *
+         * @return bool
+         * @static
+         */
+        public static function oldInputIsEmpty()
+        {
+            return \Collective\Html\FormBuilder::oldInputIsEmpty();
+        }
+
+        /**
+         * Get the session store implementation.
+         *
+         * @return \Illuminate\Session\SessionInterface $session
+         * @static
+         */
+        public static function getSessionStore()
+        {
+            return \Collective\Html\FormBuilder::getSessionStore();
+        }
+
+        /**
+         * Set the session store implementation.
+         *
+         * @param \Illuminate\Session\SessionInterface $session
+         * @return $this
+         * @static
+         */
+        public static function setSessionStore($session)
+        {
+            return \Collective\Html\FormBuilder::setSessionStore($session);
+        }
+
+        /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param callable $macro
+         * @return void
+         * @static
+         */
+        public static function macro($name, $macro)
+        {
+            \Collective\Html\FormBuilder::macro($name, $macro);
+        }
+
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool
+         * @static
+         */
+        public static function hasMacro($name)
+        {
+            return \Collective\Html\FormBuilder::hasMacro($name);
+        }
+
+        /**
+         * Dynamically handle calls to the class.
+         *
+         * @param string $method
+         * @param array $parameters
+         * @return mixed
+         * @throws \BadMethodCallException
+         * @static
+         */
+        public static function macroCall($method, $parameters)
+        {
+            return \Collective\Html\FormBuilder::macroCall($method, $parameters);
+        }
+
+        /**
+         * Register a custom component.
+         *
+         * @param $name
+         * @param $view
+         * @param array $signature
+         * @return void
+         * @static
+         */
+        public static function component($name, $view, $signature)
+        {
+            \Collective\Html\FormBuilder::component($name, $view, $signature);
+        }
+
+        /**
+         * Check if a component is registered.
+         *
+         * @param $name
+         * @return bool
+         * @static
+         */
+        public static function hasComponent($name)
+        {
+            return \Collective\Html\FormBuilder::hasComponent($name);
+        }
+
+        /**
+         * Dynamically handle calls to the class.
+         *
+         * @param string $method
+         * @param array $parameters
+         * @return \Illuminate\Contracts\View\View|mixed
+         * @throws \BadMethodCallException
+         * @static
+         */
+        public static function componentCall($method, $parameters)
+        {
+            return \Collective\Html\FormBuilder::componentCall($method, $parameters);
+        }
+
+    }
+
+
+    class Html extends \Collective\Html\HtmlFacade
+    {
+
+        /**
+         * Convert an HTML string to entities.
+         *
+         * @param string $value
+         * @return string
+         * @static
+         */
+        public static function entities($value)
+        {
+            return \Collective\Html\HtmlBuilder::entities($value);
+        }
+
+        /**
+         * Convert entities to HTML characters.
+         *
+         * @param string $value
+         * @return string
+         * @static
+         */
+        public static function decode($value)
+        {
+            return \Collective\Html\HtmlBuilder::decode($value);
+        }
+
+        /**
+         * Generate a link to a JavaScript file.
+         *
+         * @param string $url
+         * @param array $attributes
+         * @param bool $secure
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function script($url, $attributes = array(), $secure = null)
+        {
+            return \Collective\Html\HtmlBuilder::script($url, $attributes, $secure);
+        }
+
+        /**
+         * Generate a link to a CSS file.
+         *
+         * @param string $url
+         * @param array $attributes
+         * @param bool $secure
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function style($url, $attributes = array(), $secure = null)
+        {
+            return \Collective\Html\HtmlBuilder::style($url, $attributes, $secure);
+        }
+
+        /**
+         * Generate an HTML image element.
+         *
+         * @param string $url
+         * @param string $alt
+         * @param array $attributes
+         * @param bool $secure
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function image($url, $alt = null, $attributes = array(), $secure = null)
+        {
+            return \Collective\Html\HtmlBuilder::image($url, $alt, $attributes, $secure);
+        }
+
+        /**
+         * Generate a link to a Favicon file.
+         *
+         * @param string $url
+         * @param array $attributes
+         * @param bool $secure
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function favicon($url, $attributes = array(), $secure = null)
+        {
+            return \Collective\Html\HtmlBuilder::favicon($url, $attributes, $secure);
+        }
+
+        /**
+         * Generate a HTML link.
+         *
+         * @param string $url
+         * @param string $title
+         * @param array $attributes
+         * @param bool $secure
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function link($url, $title = null, $attributes = array(), $secure = null)
+        {
+            return \Collective\Html\HtmlBuilder::link($url, $title, $attributes, $secure);
+        }
+
+        /**
+         * Generate a HTTPS HTML link.
+         *
+         * @param string $url
+         * @param string $title
+         * @param array $attributes
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function secureLink($url, $title = null, $attributes = array())
+        {
+            return \Collective\Html\HtmlBuilder::secureLink($url, $title, $attributes);
+        }
+
+        /**
+         * Generate a HTML link to an asset.
+         *
+         * @param string $url
+         * @param string $title
+         * @param array $attributes
+         * @param bool $secure
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function linkAsset($url, $title = null, $attributes = array(), $secure = null)
+        {
+            return \Collective\Html\HtmlBuilder::linkAsset($url, $title, $attributes, $secure);
+        }
+
+        /**
+         * Generate a HTTPS HTML link to an asset.
+         *
+         * @param string $url
+         * @param string $title
+         * @param array $attributes
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function linkSecureAsset($url, $title = null, $attributes = array())
+        {
+            return \Collective\Html\HtmlBuilder::linkSecureAsset($url, $title, $attributes);
+        }
+
+        /**
+         * Generate a HTML link to a named route.
+         *
+         * @param string $name
+         * @param string $title
+         * @param array $parameters
+         * @param array $attributes
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function linkRoute($name, $title = null, $parameters = array(), $attributes = array())
+        {
+            return \Collective\Html\HtmlBuilder::linkRoute($name, $title, $parameters, $attributes);
+        }
+
+        /**
+         * Generate a HTML link to a controller action.
+         *
+         * @param string $action
+         * @param string $title
+         * @param array $parameters
+         * @param array $attributes
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function linkAction($action, $title = null, $parameters = array(), $attributes = array())
+        {
+            return \Collective\Html\HtmlBuilder::linkAction($action, $title, $parameters, $attributes);
+        }
+
+        /**
+         * Generate a HTML link to an email address.
+         *
+         * @param string $email
+         * @param string $title
+         * @param array $attributes
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function mailto($email, $title = null, $attributes = array())
+        {
+            return \Collective\Html\HtmlBuilder::mailto($email, $title, $attributes);
+        }
+
+        /**
+         * Obfuscate an e-mail address to prevent spam-bots from sniffing it.
+         *
+         * @param string $email
+         * @return string
+         * @static
+         */
+        public static function email($email)
+        {
+            return \Collective\Html\HtmlBuilder::email($email);
+        }
+
+        /**
+         * Generate an ordered list of items.
+         *
+         * @param array $list
+         * @param array $attributes
+         * @return \Illuminate\Support\HtmlString|string
+         * @static
+         */
+        public static function ol($list, $attributes = array())
+        {
+            return \Collective\Html\HtmlBuilder::ol($list, $attributes);
+        }
+
+        /**
+         * Generate an un-ordered list of items.
+         *
+         * @param array $list
+         * @param array $attributes
+         * @return \Illuminate\Support\HtmlString|string
+         * @static
+         */
+        public static function ul($list, $attributes = array())
+        {
+            return \Collective\Html\HtmlBuilder::ul($list, $attributes);
+        }
+
+        /**
+         * Generate a description list of items.
+         *
+         * @param array $list
+         * @param array $attributes
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function dl($list, $attributes = array())
+        {
+            return \Collective\Html\HtmlBuilder::dl($list, $attributes);
+        }
+
+        /**
+         * Build an HTML attribute string from an array.
+         *
+         * @param array $attributes
+         * @return string
+         * @static
+         */
+        public static function attributes($attributes)
+        {
+            return \Collective\Html\HtmlBuilder::attributes($attributes);
+        }
+
+        /**
+         * Obfuscate a string to prevent spam-bots from sniffing it.
+         *
+         * @param string $value
+         * @return string
+         * @static
+         */
+        public static function obfuscate($value)
+        {
+            return \Collective\Html\HtmlBuilder::obfuscate($value);
+        }
+
+        /**
+         * Generate a meta tag.
+         *
+         * @param string $name
+         * @param string $content
+         * @param array $attributes
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function meta($name, $content, $attributes = array())
+        {
+            return \Collective\Html\HtmlBuilder::meta($name, $content, $attributes);
+        }
+
+        /**
+         * Generate an html tag.
+         *
+         * @param string $tag
+         * @param mixed $content
+         * @param array $attributes
+         * @return \Illuminate\Support\HtmlString
+         * @static
+         */
+        public static function tag($tag, $content, $attributes = array())
+        {
+            return \Collective\Html\HtmlBuilder::tag($tag, $content, $attributes);
+        }
+
+        /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param callable $macro
+         * @return void
+         * @static
+         */
+        public static function macro($name, $macro)
+        {
+            \Collective\Html\HtmlBuilder::macro($name, $macro);
+        }
+
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool
+         * @static
+         */
+        public static function hasMacro($name)
+        {
+            return \Collective\Html\HtmlBuilder::hasMacro($name);
+        }
+
+        /**
+         * Dynamically handle calls to the class.
+         *
+         * @param string $method
+         * @param array $parameters
+         * @return mixed
+         * @throws \BadMethodCallException
+         * @static
+         */
+        public static function macroCall($method, $parameters)
+        {
+            return \Collective\Html\HtmlBuilder::macroCall($method, $parameters);
+        }
+
+        /**
+         * Register a custom component.
+         *
+         * @param $name
+         * @param $view
+         * @param array $signature
+         * @return void
+         * @static
+         */
+        public static function component($name, $view, $signature)
+        {
+            \Collective\Html\HtmlBuilder::component($name, $view, $signature);
+        }
+
+        /**
+         * Check if a component is registered.
+         *
+         * @param $name
+         * @return bool
+         * @static
+         */
+        public static function hasComponent($name)
+        {
+            return \Collective\Html\HtmlBuilder::hasComponent($name);
+        }
+
+        /**
+         * Dynamically handle calls to the class.
+         *
+         * @param string $method
+         * @param array $parameters
+         * @return \Illuminate\Contracts\View\View|mixed
+         * @throws \BadMethodCallException
+         * @static
+         */
+        public static function componentCall($method, $parameters)
+        {
+            return \Collective\Html\HtmlBuilder::componentCall($method, $parameters);
         }
         
     }

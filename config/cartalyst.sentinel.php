@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'session' => 'cartalyst_sentinel',
+    'session' => 'newscms_auth',
 
     /*
     |--------------------------------------------------------------------------
@@ -40,7 +40,7 @@ return [
     |
     */
 
-    'cookie' => 'cartalyst_sentinel',
+    'cookie' => 'newscms_auth',
 
     /*
     |--------------------------------------------------------------------------
@@ -53,7 +53,7 @@ return [
 
     'users' => [
 
-        'model' => 'Cartalyst\Sentinel\Users\EloquentUser',
+        'model' => 'NewsCMS\User',
 
     ],
 
@@ -113,7 +113,7 @@ return [
 
         'model' => 'Cartalyst\Sentinel\Persistences\EloquentPersistence',
 
-        'single' => false,
+        'single' => true,
 
     ],
 
@@ -255,7 +255,13 @@ return [
 
             'interval' => 900,
 
-            'thresholds' => 5,
+            'thresholds' => [
+                2 => 30,
+                5 => 60,
+                10 => 120,
+                20 => 240,
+                30 => 480,
+            ],
 
         ],
 
