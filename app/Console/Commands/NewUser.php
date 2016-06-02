@@ -53,9 +53,13 @@ class NewUser extends Command
             $credentials['first_name'] = $this->option('first_name');
             $credentials['last_name'] = $this->option('last_name');
         }
-        $user = \Sentinel::register($credentials);
-        $activation = \Activation::create($user);
-        \Activation::complete($user, $activation->code);
-        $this->info('User created successfully and user activated.');
+        if (\Validator::make($credentials, ['email' => 'required|email', 'password' => 'required'])->passes()) {
+            $user = \Sentinel::register($credentials);
+            $activation = \Activation::create($user);
+            \Activation::complete($user, $activation->code);
+            $this->info('User created successfully and user activated.');
+        } else {
+            $this->error('You did not enter a valid email address!');
+        }
     }
 }
