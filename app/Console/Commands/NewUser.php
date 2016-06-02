@@ -28,7 +28,7 @@ class NewUser extends Command
     /**
      * Create a new command instance.
      *
-     * @return void
+     * @return mixed
      */
     public function __construct()
     {
@@ -53,6 +53,9 @@ class NewUser extends Command
             $credentials['first_name'] = $this->option('first_name');
             $credentials['last_name'] = $this->option('last_name');
         }
-        \Sentinel::register($credentials);
+        $user = \Sentinel::register($credentials);
+        $activation = \Activation::create($user);
+        \Activation::complete($user, $activation->code);
+        $this->info('User created successfully and user activated.');
     }
 }
