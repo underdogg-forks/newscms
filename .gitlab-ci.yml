@@ -10,8 +10,8 @@ before_script:
   - apt-get update
   - apt-get install php7.0 php7.0-curl php7.0-gd php7.0-json php7.0-mbstring php7.0-mcrypt php7.0-mysql php7.0-xml php7.0-zip -y
   - cp .env.ci .env
-
+  - php composer-setup.php --filename=composer
 test:
   script:
-    - composer install
+    - php composer install
     - php vendor/bin/phpunit --coverage-text --colors=never
