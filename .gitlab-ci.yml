@@ -2,6 +2,7 @@ image: ubuntu:16.04
 services:
   - mysql:latest
   - redis:latest
+
 variables:
   MYSQL_DATABASE: newscms
   MYSQL_ROOT_PASSWORD: newscms
@@ -10,7 +11,10 @@ before_script:
   - apt-get update
   - apt-get install php7.0 php7.0-curl php7.0-gd php7.0-json php7.0-mbstring php7.0-mcrypt php7.0-mysql php7.0-xml php7.0-zip -y
   - cp .env.ci .env
-  - php composer-setup.php --filename=composer
+  - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');
+  - php composer-setup.php
+  - php -r "unlink('composer-setup.php');"
+
 test:
   script:
     - php composer install
