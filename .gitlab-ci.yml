@@ -13,4 +13,5 @@ before_script:
 
 test:
   script:
+    - composer install
     - php vendor/bin/phpunit --coverage-text --colors=never
