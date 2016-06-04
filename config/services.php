@@ -33,11 +33,5 @@ return [
         'model' => NewsCMS\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
-    ],
-
-    'rollbar' => [
-        'access_token' => env('ROLLBAR_TOKEN'),
-        'level' => env('ROLLBAR_LEVEL')
     ]
-
 ];

@@ -35,7 +35,7 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $e)
     {
-        if (env('ROLLBAR_TOKEN') && env('ROLLBAR_LEVEL')) {
+        if (config('services.rollbar.access_token') && config('services.rollbar.level')) {
             \Log::error($e);
         }
         parent::report($e);
