@@ -23,11 +23,6 @@ class AuthController extends Controller
 
     public function register()
     {
-
-    }
-
-    public function activate()
-    {
-
+        
     }
 }

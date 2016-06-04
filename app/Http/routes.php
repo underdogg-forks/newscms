@@ -1,18 +1,33 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+ * Routes inside the web middleware have:
+ * - CSRF Protection
+ * - Encrypted Cookies
+ */
 Route::group(['middleware' => 'web'], function () {
     Route::get('/', function () {
         return Theme::view('welcome');
+    });
+    // Get a post of a certain category
+    Route::get('/category/{category}', function () {
+
+    });
+    Route::group(['prefix' => '/{year}'], function () {
+        // Get posts from a specific year
+        Route::get('/', function () {
+
+        });
+        Route::group(['prefix' => '/{month}'], function () {
+            // Get posts from a specific month in a specific year
+            Route::get('/', function () {
+
+            });
+            // Get an individual post
+            Route::get('/{slug}', function () {
+
+            });
+        });
     });
 
     // All Administration Routes

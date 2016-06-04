@@ -32,7 +32,7 @@ class MigrationCartalystSentinel extends Migration
     {
         Schema::create('activations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->string('code');
             $table->boolean('completed')->default(0);
             $table->timestamp('completed_at')->nullable();
@@ -43,7 +43,7 @@ class MigrationCartalystSentinel extends Migration
 
         Schema::create('persistences', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->string('code');
             $table->timestamps();
 
@@ -53,7 +53,7 @@ class MigrationCartalystSentinel extends Migration
 
         Schema::create('reminders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->string('code');
             $table->boolean('completed')->default(0);
             $table->timestamp('completed_at')->nullable();
@@ -72,7 +72,7 @@ class MigrationCartalystSentinel extends Migration
         });
 
         Schema::create('role_users', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->integer('role_id')->unsigned();
             $table->nullableTimestamps();
 
@@ -82,7 +82,7 @@ class MigrationCartalystSentinel extends Migration
 
         Schema::create('throttle', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->bigInteger('user_id')->unsigned()->nullable();
             $table->string('type');
             $table->string('ip')->nullable();
             $table->timestamps();
@@ -92,7 +92,7 @@ class MigrationCartalystSentinel extends Migration
         });
 
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('email');
             $table->string('password');
             $table->text('permissions')->nullable();

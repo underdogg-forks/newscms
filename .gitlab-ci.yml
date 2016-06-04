@@ -17,5 +17,5 @@ before_script:
 
 test:
   script:
-    - php composer install
+    - php composer.phar install
     - php vendor/bin/phpunit --coverage-text --colors=never
