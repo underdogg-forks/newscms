@@ -14,15 +14,32 @@ class AuthController extends Controller
             'password' => $request->input('password')
         ];
         try {
-            \Sentinel::authenticate($credentials);
+            $user = \Sentinel::authenticate($credentials);
+            // If castle is enabled track the successful login
+            if (config('services.castle.api_secret')) {
+                \Castle::setApiKey(config('services.castle.api_secret'));
+                \Castle::track([
+                    'name' => '$login.succeeded',
+                    'user_id' => $user->getUserId()
+                ]);
+            }
             return redirect()->intended();
         } catch (\Exception $e) {
+            // If castle is enabled track the failed login
+            if (config('services.castle.api_secret')) {
+                \Castle::setApiKey(config('services.castle.api_secret'));
+                \Castle::track([
+                    'name' => '$login.failed',
+                    'details' => [
+                        '$login' => $credentials['email']
+                    ]
+                ]);
+            }
             return redirect('auth/login')->withErrors('auth', $e->getMessage());
         }
     }
 
     public function register()
     {
-        
     }
 }

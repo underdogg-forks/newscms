@@ -7229,7 +7229,7 @@ Materialize.toast = function (message, displayLength, className, completeCallbac
             targetDate,
             isTargetArray = $.isArray(value),
             isTargetObject = $.isPlainObject(value),
-            viewsetObject = this.item.view
+            viewsetObject = this.item.view;
         /*,
          safety = 100*/
 
@@ -7273,9 +7273,8 @@ Materialize.toast = function (message, displayLength, className, completeCallbac
         }
 
         return value
-    };; //DatePicker.prototype.navigate
-
-
+    };
+    //DatePicker.prototype.navigate
     /**
      * Normalize a date by setting the hours to midnight.
      */
@@ -7357,7 +7356,7 @@ Materialize.toast = function (message, displayLength, className, completeCallbac
 
                     // Return only integers for enabled weekdays.
                     return _.isInteger(value)
-                }).length
+                }).length;
         /*,
 
          safety = 100*/
@@ -7439,9 +7438,8 @@ Materialize.toast = function (message, displayLength, className, completeCallbac
 
         // Return the date object settled on.
         return dateObject
-    };; //DatePicker.prototype.validate
-
-
+    };
+    //DatePicker.prototype.validate
     /**
      * Check if a date is disabled.
      */

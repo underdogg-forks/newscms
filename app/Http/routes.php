@@ -6,31 +6,9 @@
  * - Encrypted Cookies
  */
 Route::group(['middleware' => 'web'], function () {
-    Route::get('/', function () {
-        return Theme::view('welcome');
-    });
-    // Get a post of a certain category
-    Route::get('/category/{category}', function () {
-
-    });
-    Route::group(['prefix' => '/{year}'], function () {
-        // Get posts from a specific year
-        Route::get('/', function () {
-
-        });
-        Route::group(['prefix' => '/{month}'], function () {
-            // Get posts from a specific month in a specific year
-            Route::get('/', function () {
-
-            });
-            // Get an individual post
-            Route::get('/{slug}', function () {
-
-            });
-        });
-    });
-
-    // All Administration Routes
+    /*
+     * Administration routes must come first in order to be loaded properly
+     */
     Route::group(['prefix' => '/admin'], function () {
         Route::group(['middleware' => 'auth'], function () {
             Route::get('/', function () {
@@ -63,5 +41,32 @@ Route::group(['middleware' => 'web'], function () {
             return Theme::view('admin.auth.login');
         });
         Route::post('/login', 'Auth\AuthController@login');;
+    });
+
+    /*
+     * Post them selves and home page must come last.
+     */
+    Route::get('/', function () {
+        return Theme::view('welcome');
+    });
+    // Get a post of a certain category
+    Route::get('/category/{category}', function () {
+
+    });
+    Route::group(['prefix' => '/{year}'], function () {
+        // Get posts from a specific year
+        Route::get('/', function () {
+
+        });
+        Route::group(['prefix' => '/{month}'], function () {
+            // Get posts from a specific month in a specific year
+            Route::get('/', function () {
+
+            });
+            // Get an individual post
+            Route::get('/{slug}', function () {
+
+            });
+        });
     });
 });

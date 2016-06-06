@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "58b5774f4237aabd364e7b8a8012ecec",
-    "content-hash": "ea142adb93458074640e75fe311e28a7",
+    "hash": "bae0f45412e490479a5e56809b4bfa26",
+    "content-hash": "61de20bc1b4a372b6c32cd511c31ad9f",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -227,6 +227,54 @@
                 "support"
             ],
             "time": "2015-06-24 13:00:53"
+        },
+        {
+            "name": "castle/castle-php",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/castle/castle-php.git",
+                "reference": "ad1e15852255be1731616b3a4e5b05f159f3e384"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/castle/castle-php/zipball/ad1e15852255be1731616b3a4e5b05f159f3e384",
+                "reference": "ad1e15852255be1731616b3a4e5b05f159f3e384",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.3.5",
+                "satooshi/php-coveralls": "v0.6.1",
+                "sebastianbergmann/phpcov": "1.1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/Castle",
+                    "lib/RestModel"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Castle",
+                    "email": "team@castle.io",
+                    "homepage": "https://castle.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP bindings for Castle",
+            "homepage": "https://github.com/castle/castle-php",
+            "keywords": [
+                "real-time user account monitoring"
+            ],
+            "time": "2016-03-08 06:11:42"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -783,6 +831,49 @@
                 "parser"
             ],
             "time": "2014-09-09 13:34:57"
+        },
+        {
+            "name": "firebase/php-jwt",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/firebase/php-jwt.git",
+                "reference": "fa8a06e96526eb7c0eeaa47e4f39be59d21f16e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/fa8a06e96526eb7c0eeaa47e4f39be59d21f16e1",
+                "reference": "fa8a06e96526eb7c0eeaa47e4f39be59d21f16e1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Firebase\\JWT\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Neuman Vong",
+                    "email": "neuman+pear@twilio.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Anant Narayanan",
+                    "email": "anant@php.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+            "homepage": "https://github.com/firebase/php-jwt",
+            "time": "2015-07-22 18:31:08"
         },
         {
             "name": "jakub-onderka/php-console-color",

@@ -327,7 +327,7 @@
             targetDate,
             isTargetArray = $.isArray(value),
             isTargetObject = $.isPlainObject(value),
-            viewsetObject = this.item.view
+            viewsetObject = this.item.view;
         /*,
          safety = 100*/
 
@@ -371,9 +371,8 @@
         }
 
         return value
-    };; //DatePicker.prototype.navigate
-
-
+    };
+    //DatePicker.prototype.navigate
     /**
      * Normalize a date by setting the hours to midnight.
      */
@@ -455,7 +454,7 @@
 
                     // Return only integers for enabled weekdays.
                     return _.isInteger(value)
-                }).length
+                }).length;
         /*,
 
          safety = 100*/
@@ -537,9 +536,8 @@
 
         // Return the date object settled on.
         return dateObject
-    };; //DatePicker.prototype.validate
-
-
+    };
+    //DatePicker.prototype.validate
     /**
      * Check if a date is disabled.
      */
