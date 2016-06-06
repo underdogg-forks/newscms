@@ -22,6 +22,9 @@ class Posts extends Migration
             $table->bigInteger('category_id');
             $table->timestamps();
             $table->softDeletes();
+
+            $table->unique('slug');
+            $table->index('created_at');
         });
     }
 

@@ -16,11 +16,12 @@ class Categories extends Migration
             $table->bigInteger('id');
             $table->string('name');
             $table->string('header_image')->nullable();
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('slug');
             $table->timestamps();
 
             $table->unique('slug');
+            $table->index('created_at');
         });
     }
 
