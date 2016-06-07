@@ -4,6 +4,32 @@ namespace NewsCMS;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * NewsCMS\Posts
+ *
+ * @property integer $id
+ * @property string $slug
+ * @property string $title
+ * @property string $header_image
+ * @property string $content
+ * @property integer $user_id
+ * @property integer $category_id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
+ * @property-read \NewsCMS\Categories $category
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereSlug($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereTitle($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereHeaderImage($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereContent($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereUserId($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereCategoryId($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereDeletedAt($value)
+ * @mixin \Eloquent
+ */
 class Posts extends Model
 {
     protected $table = 'posts';

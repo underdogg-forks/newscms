@@ -10,6 +10,36 @@ use Cartalyst\Sentinel\Roles\RoleInterface;
 use Cartalyst\Sentinel\Users\UserInterface;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * NewsCMS\User
+ *
+ * @property integer $id
+ * @property string $email
+ * @property string $password
+ * @property string $permissions
+ * @property string $last_login
+ * @property string $first_name
+ * @property string $last_name
+ * @property string $username
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cartalyst\Sentinel\Activations\EloquentActivation[] $activations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cartalyst\Sentinel\Persistences\EloquentPersistence[] $persistences
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cartalyst\Sentinel\Reminders\EloquentReminder[] $reminders
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cartalyst\Sentinel\Roles\EloquentRole[] $roles
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cartalyst\Sentinel\Throttling\EloquentThrottle[] $throttle
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereEmail($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User wherePassword($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User wherePermissions($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereLastLogin($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereFirstName($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereLastName($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereUsername($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class User extends Model implements RoleableInterface, PermissibleInterface, PersistableInterface, UserInterface
 {
     use PermissibleTrait;

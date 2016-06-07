@@ -6,6 +6,9 @@
  * - Encrypted Cookies
  */
 Route::group(['middleware' => 'web'], function () {
+    Route::get('/test/{slug}', function ($slug) {
+        return dd(\NewsCMS\Categories::whereSlug($slug)->first()->posts);
+    });
     /*
      * Administration routes must come first in order to be loaded properly
      */

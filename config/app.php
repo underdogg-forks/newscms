@@ -159,7 +159,6 @@ return [
         /*
          * Custom Stuff
          */
-        Jenssegers\Rollbar\RollbarServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Pingpong\Themes\ThemesServiceProvider::class,
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
