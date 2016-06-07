@@ -6,9 +6,6 @@
  * - Encrypted Cookies
  */
 Route::group(['middleware' => 'web'], function () {
-    Route::get('/test/{slug}', function ($slug) {
-        return dd(\NewsCMS\Categories::whereSlug($slug)->first()->posts);
-    });
     /*
      * Administration routes must come first in order to be loaded properly
      */
@@ -53,23 +50,15 @@ Route::group(['middleware' => 'web'], function () {
         return Theme::view('welcome');
     });
     // Get a post of a certain category
-    Route::get('/category/{category}', function () {
-
-    });
+    Route::get('/category/{category}', 'PostsController@getCategories');
     Route::group(['prefix' => '/{year}'], function () {
         // Get posts from a specific year
-        Route::get('/', function () {
-
-        });
+        Route::get('/', 'PostsController@getYear');
         Route::group(['prefix' => '/{month}'], function () {
             // Get posts from a specific month in a specific year
-            Route::get('/', function () {
-
-            });
+            Route::get('/', 'PostsController@getMonth');
             // Get an individual post
-            Route::get('/{slug}', function () {
-
-            });
+            Route::get('/{slug}', 'PostsController@getSlug');
         });
     });
 });
