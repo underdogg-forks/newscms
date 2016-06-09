@@ -16,23 +16,20 @@ Route::group(['middleware' => 'web'], function () {
             });
             Route::group(['prefix' => '/posts'], function () {
                 // List posts/drafts
-                Route::get('/', function () {
-                    return Theme::view('admin.posts.list');
-                });
+                Route::get('/', 'Admin\PostsController@getPosts');
+                Route::post('/deleted', 'Admin\PostsController@getDeletedPosts');
                 // Create new Post/Draft
                 Route::get('/new', function () {
                     return Theme::view('admin.posts.new');
                 });
+                Route::post('/new', 'Admin\PostsController@createPost');
 
                 // Update current Post/Draft
-                Route::get('/update/{id}', function ($id) {
-                    return Theme::view('admin.posts.update');
-                });
+                Route::get('/update/{id}', 'Admin\PostsController@getPostToUpdate');
+                Route::post('/update/{id}', 'Admin\PostsController@updatePost');
 
-                // List deleted posts/drafts
-                Route::post('/deleted', function ($id) {
-                    return Theme::view('admin.posts.deleted');
-                });
+                // Delete a post softly or permanently depending on list its being deleted from.
+                Route::delete('/delete/{id}', 'Admin\PostsController@deletePost');
             });
         });
 
