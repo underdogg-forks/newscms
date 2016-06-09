@@ -4,6 +4,7 @@
  * Routes inside the web middleware have:
  * - CSRF Protection
  * - Encrypted Cookies
+ * All Routes have Encrypted Sessions
  */
 Route::group(['middleware' => 'web'], function () {
     /*
