@@ -29,6 +29,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereDeletedAt($value)
  * @mixin \Eloquent
+ * @property string $published_at
+ * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts wherePublishedAt($value)
  */
 class Posts extends Model
 {

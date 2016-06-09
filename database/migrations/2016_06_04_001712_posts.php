@@ -20,6 +20,7 @@ class Posts extends Migration
             $table->text('content');
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('category_id');
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
 

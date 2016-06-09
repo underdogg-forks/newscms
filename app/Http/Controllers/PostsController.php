@@ -22,7 +22,7 @@ class PostsController extends Controller
             } else {
                 $posts = \Cache::get('posts-' . $category);
             }
-            return \Theme::view('blog.category', ['posts' => $posts]);
+            return \Theme::view('blog.category', ['posts' => $posts, 'category' => Categories::whereSlug($category)->first()]);
         } else {
             return abort(404);
         }
@@ -35,14 +35,14 @@ class PostsController extends Controller
      */
     public function getYear($year)
     {
-        if (Posts::whereYear('created_at', '=', $year)->exists()) {
+        if (Posts::whereYear('created_at', '=', $year)->where('published_at', '!=', null)->exists()) {
             if (!\Cache::has('post-' . $year)) {
-                $posts = Posts::whereYear('created_at', '=', $year);
+                $posts = Posts::whereYear('created_at', '=', $year)->where('published_at', '!=', null);
                 \Cache::put('posts-' . $year, $posts);
             } else {
                 $posts = \Cache::get('posts-' . $year);
             }
-            return \Theme::view('blog.year', ['posts' => $posts]);
+            return \Theme::view('blog.list', ['posts' => $posts]);
         } else {
             return abort(404);
         }
@@ -56,14 +56,14 @@ class PostsController extends Controller
      */
     public function getMonth($year, $month)
     {
-        if (Posts::whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->exists()) {
+        if (Posts::whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('published_at', '!=', null)->exists()) {
             if (!\Cache::has('post-' . $year . '-' . $month)) {
-                $posts = Posts::whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month);
+                $posts = Posts::whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('published_at', '!=', null);
                 \Cache::put('posts-' . $year . '-' . $month, $posts);
             } else {
                 $posts = \Cache::get('posts-' . $year . '-' . $month);
             }
-            return \Theme::view('blog.month', ['posts' => $posts]);
+            return \Theme::view('blog.list', ['posts' => $posts]);
         } else {
             return abort(404);
         }
@@ -78,14 +78,14 @@ class PostsController extends Controller
      */
     public function getSlug($year, $month, $slug)
     {
-        if (Posts::whereSlug($slug)->whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->exists()) {
-            if (!\Cache::has('post-' . $year . '-' . $month . '-' . $slug)) {
-                $posts = Posts::whereSlug($slug)->whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month);
-                \Cache::put('posts-' . $year . '-' . $month . '-' . $slug, $posts);
+        if (Posts::whereSlug($slug)->whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('published_at', '!=', null)->exists()) {
+            if (!\Cache::has('posts-' . $year . '-' . $month . '-' . $slug)) {
+                $post = Posts::whereSlug($slug)->whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('published_at', '!=', null)->first();
+                \Cache::put('posts-' . $year . '-' . $month . '-' . $slug, $post);
             } else {
-                $posts = \Cache::get('posts-' . $year . '-' . $month . '-' . $slug);
+                $post = \Cache::get('posts-' . $year . '-' . $month . '-' . $slug);
             }
-            return \Theme::view('blog.single', ['posts' => $posts]);
+            return \Theme::view('blog.single', ['post' => $post]);
         } else {
             return abort(404);
         }
