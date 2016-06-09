@@ -17,7 +17,8 @@ class PostsController extends Controller
     {
         if (Categories::whereSlug($category)->exists()) {
             if (!\Cache::has('posts-' . $category)) {
-                $posts = Categories::whereSlug($category)->first()->posts;
+                $category = Categories::whereSlug($category)->first();
+                $posts = Posts::whereCategoryId($category->id)->where('published_at', '!=', null)->get();
                 \Cache::put('posts-' . $category, $posts);
             } else {
                 $posts = \Cache::get('posts-' . $category);
@@ -37,7 +38,7 @@ class PostsController extends Controller
     {
         if (Posts::whereYear('created_at', '=', $year)->where('published_at', '!=', null)->exists()) {
             if (!\Cache::has('post-' . $year)) {
-                $posts = Posts::whereYear('created_at', '=', $year)->where('published_at', '!=', null);
+                $posts = Posts::whereYear('created_at', '=', $year)->where('published_at', '!=', null)->get();
                 \Cache::put('posts-' . $year, $posts);
             } else {
                 $posts = \Cache::get('posts-' . $year);
@@ -58,7 +59,7 @@ class PostsController extends Controller
     {
         if (Posts::whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('published_at', '!=', null)->exists()) {
             if (!\Cache::has('post-' . $year . '-' . $month)) {
-                $posts = Posts::whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('published_at', '!=', null);
+                $posts = Posts::whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('published_at', '!=', null)->get();
                 \Cache::put('posts-' . $year . '-' . $month, $posts);
             } else {
                 $posts = \Cache::get('posts-' . $year . '-' . $month);
