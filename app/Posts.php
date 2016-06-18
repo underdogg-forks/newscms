@@ -3,6 +3,7 @@
 namespace NewsCMS;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * NewsCMS\Posts
@@ -34,6 +35,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Posts extends Model
 {
+    use SoftDeletes;
+    
     protected $table = 'posts';
     protected $fillable = ['slug', 'title', 'header_image', 'content', 'user_id', 'category_id'];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];

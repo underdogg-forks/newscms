@@ -19,7 +19,7 @@ class PostsController extends Controller
             if (!\Cache::has('posts-' . $category)) {
                 $category = Categories::whereSlug($category)->first();
                 $posts = Posts::whereCategoryId($category->id)->where('published_at', '!=', null)->get();
-                \Cache::put('posts-' . $category, $posts);
+                \Cache::put('posts-' . $category, $posts, 5);
             } else {
                 $posts = \Cache::get('posts-' . $category);
             }
@@ -39,7 +39,7 @@ class PostsController extends Controller
         if (Posts::whereYear('created_at', '=', $year)->where('published_at', '!=', null)->exists()) {
             if (!\Cache::has('post-' . $year)) {
                 $posts = Posts::whereYear('created_at', '=', $year)->where('published_at', '!=', null)->get();
-                \Cache::put('posts-' . $year, $posts);
+                \Cache::put('posts-' . $year, $posts, 5);
             } else {
                 $posts = \Cache::get('posts-' . $year);
             }
@@ -60,7 +60,7 @@ class PostsController extends Controller
         if (Posts::whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('published_at', '!=', null)->exists()) {
             if (!\Cache::has('post-' . $year . '-' . $month)) {
                 $posts = Posts::whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('published_at', '!=', null)->get();
-                \Cache::put('posts-' . $year . '-' . $month, $posts);
+                \Cache::put('posts-' . $year . '-' . $month, $posts, 5);
             } else {
                 $posts = \Cache::get('posts-' . $year . '-' . $month);
             }
@@ -82,7 +82,7 @@ class PostsController extends Controller
         if (Posts::whereSlug($slug)->whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('published_at', '!=', null)->exists()) {
             if (!\Cache::has('posts-' . $year . '-' . $month . '-' . $slug)) {
                 $post = Posts::whereSlug($slug)->whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('published_at', '!=', null)->first();
-                \Cache::put('posts-' . $year . '-' . $month . '-' . $slug, $post);
+                \Cache::put('posts-' . $year . '-' . $month . '-' . $slug, $post, 5);
             } else {
                 $post = \Cache::get('posts-' . $year . '-' . $month . '-' . $slug);
             }
