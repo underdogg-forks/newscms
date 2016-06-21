@@ -215,6 +215,11 @@ class User extends Model implements RoleableInterface, PermissibleInterface, Per
         static::$throttlingModel = $throttlingModel;
     }
 
+    public function posts()
+    {
+        $this->hasMany('NewsCMS\Posts');
+    }
+
     /**
      * Returns an array of login column names.
      *

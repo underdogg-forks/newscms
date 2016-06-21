@@ -14,9 +14,10 @@ class Create extends Event
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($array)
     {
-        //
+        $array = (object)$array;
+        $this->details = $array;
     }
 
     /**

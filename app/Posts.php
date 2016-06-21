@@ -32,6 +32,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @mixin \Eloquent
  * @property string $published_at
  * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts wherePublishedAt($value)
+ * @property-read \NewsCMS\User $author
  */
 class Posts extends Model
 {
@@ -44,5 +45,10 @@ class Posts extends Model
     public function category()
     {
         return $this->belongsTo('NewsCMS\Categories');
+    }
+
+    public function author()
+    {
+        return $this->belongsTo('NewsCMS\User');
     }
 }
