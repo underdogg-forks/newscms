@@ -3,6 +3,7 @@
 namespace NewsCMS\Listeners\Article;
 
 use NewsCMS\Events\Article\Create;
+use NewsCMS\Events\Article\Publish;
 use NewsCMS\Posts;
 
 class CreateListener
@@ -32,11 +33,14 @@ class CreateListener
         } else {
             $special['slug'] = str_slug($event->title);
         }
-        Posts::create([
+        $post = Posts::create([
             'title' => $event->title,
             'content' => $event->title,
             'header_image' => $event->event_image,
             'slug' => $special['slug']
         ]);
+        if ($event->publish) {
+            event(new Publish($post->id));
+        }
     }
 }

@@ -2,10 +2,11 @@
 
 namespace NewsCMS\Events\Article;
 
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Queue\SerializesModels;
 use NewsCMS\Events\Event;
 
-class Create extends Event
+class Create extends Event implements ShouldBroadcast
 {
     use SerializesModels;
 
@@ -27,6 +28,11 @@ class Create extends Event
      */
     public function broadcastOn()
     {
-        return [];
+        return ['post'];
+    }
+
+    public function broadcastAs()
+    {
+        return 'created';
     }
 }
