@@ -5,6 +5,7 @@ namespace NewsCMS\Http\Controllers;
 use NewsCMS\Categories;
 use NewsCMS\Http\Requests;
 use NewsCMS\Posts;
+use NewsCMS\User;
 
 class PostsController extends Controller
 {
@@ -16,14 +17,35 @@ class PostsController extends Controller
     public function getCategories($category)
     {
         if (Categories::whereSlug($category)->exists()) {
+            $category = Categories::whereSlug($category)->first();
             if (!\Cache::has('posts-' . $category)) {
-                $category = Categories::whereSlug($category)->first();
-                $posts = Posts::whereCategoryId($category->id)->where('published_at', '!=', null)->get();
+                $posts = Posts::whereCategoryId($category->id)->where('published_at', '!=', null)->paginate();
                 \Cache::put('posts-' . $category, $posts, 5);
             } else {
                 $posts = \Cache::get('posts-' . $category);
             }
-            return \Theme::view('blog.category', ['posts' => $posts, 'category' => Categories::whereSlug($category)->first()]);
+            return \Theme::view('blog.category', ['posts' => $posts, 'category' => $category]);
+        } else {
+            return abort(404);
+        }
+    }
+
+    /**
+     * Display Author Posts
+     * @param $username
+     * @return mixed
+     */
+    public function getAuthor($username)
+    {
+        if (User::whereUsername($username)->exists()) {
+            if (!\Cache::has('posts-author-' . $username)) {
+                $user = User::whereUsername($username)->first();
+                $posts = Posts::whereUserId($user->id)->paginate();
+                \Cache::put('posts-author-' . $username, $posts, 5);
+            } else {
+                $posts = \Cache::get('posts-author-' . $username);
+            }
+            return \Theme::view('blog.author', $posts);
         } else {
             return abort(404);
         }

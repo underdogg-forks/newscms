@@ -42,6 +42,11 @@ Route::group(['middleware' => 'web'], function () {
     });
 
     /*
+     * Util Routes
+     */
+    Route::get('/manifest', 'UtilController@manifest');
+
+    /*
      * Post them selves and home page must come last.
      */
     Route::get('/', function () {
@@ -49,6 +54,7 @@ Route::group(['middleware' => 'web'], function () {
     });
     // Get a post of a certain category
     Route::get('/category/{category}', 'PostsController@getCategories');
+    Route::get('/author/{username}', 'PostsController@getAuthor');
     Route::group(['prefix' => '/{year}'], function () {
         // Get posts from a specific year
         Route::get('/', 'PostsController@getYear');
