@@ -10,6 +10,20 @@ use NewsCMS\User;
 class PostsController extends Controller
 {
     /**
+     * Get all the posts for the homepage
+     * @return \Theme
+     */
+    public function getAll()
+    {
+        if (!\Cache::has('welcome')) {
+            $posts = Posts::where('published_at', '!=', null)->orderBy('published_at', 'desc')->paginate(5);
+            \Cache::put('welcome', $posts, 5);
+        } else {
+            $posts = \Cache::get('welcome');
+        }
+        return \Theme::view('welcome', ['posts' => $posts]);
+    }
+    /**
      * Get all post in a category
      * @param $category
      * @return \Theme
@@ -17,14 +31,14 @@ class PostsController extends Controller
     public function getCategories($category)
     {
         if (Categories::whereSlug($category)->exists()) {
-            $category = Categories::whereSlug($category)->first();
+            $category_db = Categories::whereSlug($category)->first();
             if (!\Cache::has('posts-' . $category)) {
-                $posts = Posts::whereCategoryId($category->id)->where('published_at', '!=', null)->paginate();
+                $posts = Posts::whereCategoryId($category_db->id)->where('published_at', '!=', null)->orderBy('published_at', 'desc')->paginate();
                 \Cache::put('posts-' . $category, $posts, 5);
             } else {
                 $posts = \Cache::get('posts-' . $category);
             }
-            return \Theme::view('blog.category', ['posts' => $posts, 'category' => $category]);
+            return \Theme::view('blog.category', ['posts' => $posts, 'category' => $category_db]);
         } else {
             return abort(404);
         }
@@ -33,14 +47,14 @@ class PostsController extends Controller
     /**
      * Display Author Posts
      * @param $username
-     * @return mixed
+     * @return \Theme
      */
     public function getAuthor($username)
     {
         if (User::whereUsername($username)->exists()) {
             if (!\Cache::has('posts-author-' . $username)) {
                 $user = User::whereUsername($username)->first();
-                $posts = Posts::whereUserId($user->id)->paginate();
+                $posts = Posts::whereUserId($user->id)->where('published_at', '!=', null)->orderBy('published_at', 'desc')->paginate();
                 \Cache::put('posts-author-' . $username, $posts, 5);
             } else {
                 $posts = \Cache::get('posts-author-' . $username);
@@ -60,7 +74,7 @@ class PostsController extends Controller
     {
         if (Posts::whereYear('created_at', '=', $year)->where('published_at', '!=', null)->exists()) {
             if (!\Cache::has('post-' . $year)) {
-                $posts = Posts::whereYear('created_at', '=', $year)->where('published_at', '!=', null)->get();
+                $posts = Posts::whereYear('created_at', '=', $year)->where('published_at', '!=', null)->orderBy('published_at', 'desc')->paginate();
                 \Cache::put('posts-' . $year, $posts, 5);
             } else {
                 $posts = \Cache::get('posts-' . $year);
@@ -81,7 +95,7 @@ class PostsController extends Controller
     {
         if (Posts::whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('published_at', '!=', null)->exists()) {
             if (!\Cache::has('post-' . $year . '-' . $month)) {
-                $posts = Posts::whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('published_at', '!=', null)->get();
+                $posts = Posts::whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('published_at', '!=', null)->orderBy('published_at', 'desc')->paginate();
                 \Cache::put('posts-' . $year . '-' . $month, $posts, 5);
             } else {
                 $posts = \Cache::get('posts-' . $year . '-' . $month);

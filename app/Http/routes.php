@@ -49,9 +49,7 @@ Route::group(['middleware' => 'web'], function () {
     /*
      * Post them selves and home page must come last.
      */
-    Route::get('/', function () {
-        return Theme::view('welcome');
-    });
+    Route::get('/', 'PostsController@getAll');
     // Get a post of a certain category
     Route::get('/category/{category}', 'PostsController@getCategories');
     Route::get('/author/{username}', 'PostsController@getAuthor');
