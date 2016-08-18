@@ -1,16 +1,15 @@
 <?php
 
-namespace NewsCMS\Events\Article;
+namespace NewsCMS\Events\Auth;
 
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Queue\SerializesModels;
 use NewsCMS\Events\Event;
 
-class Create extends Event implements ShouldBroadcast
+class Login extends Event
 {
     use SerializesModels;
 
-    public $details;
+    public $credentials;
 
     /**
      * Create a new event instance.
@@ -20,7 +19,7 @@ class Create extends Event implements ShouldBroadcast
     public function __construct($array)
     {
         $array = (object)$array;
-        $this->details = $array;
+        $this->credentials = $array;
     }
 
     /**
@@ -30,11 +29,16 @@ class Create extends Event implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return ['post'];
+        return ['auth'];
     }
 
+    /**
+     * Get the event name for the broadcast
+     *
+     * @return string
+     */
     public function broadcastAs()
     {
-        return 'created';
+        return 'login';
     }
 }

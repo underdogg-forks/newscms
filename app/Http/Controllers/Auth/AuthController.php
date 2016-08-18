@@ -2,6 +2,7 @@
 
 namespace NewsCMS\Http\Controllers\Auth;
 
+use NewsCMS\Events\Auth\Logout;
 use NewsCMS\Http\Controllers\Controller;
 use NewsCMS\Http\Requests\LoginRequest;
 
@@ -39,7 +40,8 @@ class AuthController extends Controller
         }
     }
 
-    public function register()
+    public function logout()
     {
+        event(new Logout());
     }
 }

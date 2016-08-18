@@ -38,7 +38,8 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/login', function () {
             return Theme::view('admin.auth.login');
         });
-        Route::post('/login', 'Auth\AuthController@login');;
+        Route::post('/login', 'Auth\AuthController@login');
+        Route::any('/logout', 'Auth\AuthController@logout');
     });
 
     /*

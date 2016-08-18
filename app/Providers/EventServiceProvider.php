@@ -26,6 +26,13 @@ class EventServiceProvider extends ServiceProvider
         'NewsCMS\Events\Article\Publish' => [
             'NewsCMS\Listeners\Article\PublishListener',
         ],
+        // Authentication
+        'NewsCMS\Events\Auth\Login' => [
+            'NewsCMS\Listeners\Auth\LoginListener'
+        ],
+        'NewsCMS\Events\Auth\Logout' => [
+            'NewsCMS\Listeners\Auth\LogoutListener'
+        ]
     ];
 
     /**
