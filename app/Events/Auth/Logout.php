@@ -9,14 +9,15 @@ class Logout extends Event
 {
     use SerializesModels;
 
+    public $id;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($id)
     {
-        //
+        $this->id = $id;
     }
 
     /**
@@ -26,6 +27,11 @@ class Logout extends Event
      */
     public function broadcastOn()
     {
-        return [];
+        return ['auth'];
+    }
+
+    public function broadcastAs()
+    {
+        return 'logout';
     }
 }

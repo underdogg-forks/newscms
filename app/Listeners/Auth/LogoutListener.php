@@ -20,10 +20,10 @@ class LogoutListener
      * Handle the event.
      *
      * @param  Logout $event
-     * @return void
+     * @return boolean
      */
     public function handle(Logout $event)
     {
-        //
+        return true;
     }
 }

@@ -25,11 +25,9 @@ class AuthController extends Controller
 
     public function logout()
     {
-        $event = event(new Logout());
-        if ($event) {
-            return redirect('/');
-        } else {
-            return redirect('/admin');
-        }
+        $user = \Sentinel::getUser();
+        \Sentinel::logout($user);
+        event(new Logout($user->getUserId()));
+        return redirect('/');
     }
 }
