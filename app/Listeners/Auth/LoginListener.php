@@ -20,10 +20,15 @@ class LoginListener
      * Handle the event.
      *
      * @param  Login $event
-     * @return void
+     * @return boolean
      */
     public function handle(Login $event)
     {
-        //
+        try {
+            \Sentinel::authenticate((array)$event->credentials);
+            return true;
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 }

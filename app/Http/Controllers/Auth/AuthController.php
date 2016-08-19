@@ -2,6 +2,7 @@
 
 namespace NewsCMS\Http\Controllers\Auth;
 
+use NewsCMS\Events\Auth\Login;
 use NewsCMS\Events\Auth\Logout;
 use NewsCMS\Http\Controllers\Controller;
 use NewsCMS\Http\Requests\LoginRequest;
@@ -14,34 +15,21 @@ class AuthController extends Controller
             'email' => $request->input('email'),
             'password' => $request->input('password')
         ];
-        try {
-            $user = \Sentinel::authenticate($credentials);
-            // If castle is enabled track the successful login
-            if (config('services.castle.api_secret')) {
-                \Castle::setApiKey(config('services.castle.api_secret'));
-                \Castle::track([
-                    'name' => '$login.succeeded',
-                    'user_id' => $user->getUserId()
-                ]);
-            }
+        $event = event(new Login($credentials));
+        if ($event) {
             return redirect()->intended();
-        } catch (\Exception $e) {
-            // If castle is enabled track the failed login
-            if (config('services.castle.api_secret')) {
-                \Castle::setApiKey(config('services.castle.api_secret'));
-                \Castle::track([
-                    'name' => '$login.failed',
-                    'details' => [
-                        '$login' => $credentials['email']
-                    ]
-                ]);
-            }
-            return redirect('auth/login')->withErrors('auth', $e->getMessage());
+        } else {
+            return redirect('admin/login');
         }
     }
 
     public function logout()
     {
-        event(new Logout());
+        $event = event(new Logout());
+        if ($event) {
+            return redirect('/');
+        } else {
+            return redirect('/admin');
+        }
     }
 }
