@@ -37,7 +37,8 @@
       "database"
     ],
     "psr-4": {
-      "NewsCMS\\": "app/"
+      "NewsCMS\\": "app/",
+      "Modules\\": "Modules/"
     }
   },
   "autoload-dev": {
