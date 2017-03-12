@@ -10,6 +10,12 @@
   ],
   "license": "MIT",
   "type": "project",
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
     "php": ">=5.5.9",
     "laravel/framework": "5.2.*",
@@ -58,10 +64,9 @@
     ],
     "post-update-cmd": [
       "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+      "php artisan ide-helper:generate",
+      "php artisan ide-helper:meta",
       "php artisan optimize"
     ]
-  },
-  "config": {
-    "preferred-install": "dist"
   }
 }

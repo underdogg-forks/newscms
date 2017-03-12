@@ -1,0 +1,13 @@
+{
+  "name": "oneui",
+  "description": "",
+  "author": [
+    {
+      "name": "",
+      "email": ""
+    }
+  ],
+  "files": [
+    "theme.php"
+  ]
+}

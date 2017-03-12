@@ -2,7 +2,7 @@
 
 return [
 
-    'default' => 'oneui',
+    'default' => 'default',
 
     'path' => base_path('resources/themes'),
 
