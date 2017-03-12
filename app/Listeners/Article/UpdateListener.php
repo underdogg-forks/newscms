@@ -1,8 +1,8 @@
 <?php
 
-namespace NewsCMS\Listeners\Article;
+namespace App\Listeners\Article;
 
-use NewsCMS\Events\Article\Update;
+use App\Events\Article\Update;
 
 class UpdateListener
 {

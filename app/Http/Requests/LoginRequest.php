@@ -1,6 +1,6 @@
 <?php
 
-namespace NewsCMS\Http\Requests;
+namespace App\Http\Requests;
 
 class LoginRequest extends Request
 {

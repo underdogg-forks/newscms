@@ -1,6 +1,6 @@
 <?php
 
-namespace NewsCMS\Exceptions;
+namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;

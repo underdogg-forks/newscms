@@ -1,6 +1,6 @@
 <?php
 
-namespace NewsCMS\Events;
+namespace App\Events;
 
 abstract class Event
 {

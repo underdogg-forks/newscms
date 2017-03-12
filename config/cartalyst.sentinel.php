@@ -53,7 +53,7 @@ return [
 
     'users' => [
 
-        'model' => 'NewsCMS\User',
+        'model' => 'App\User',
 
     ],
 

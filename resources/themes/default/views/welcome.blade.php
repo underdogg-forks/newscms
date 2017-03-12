@@ -18,11 +18,11 @@
             <div class="clearfix">
                 <button class="navbar navbar-light pull-xs-right hidden-sm-up" type="button" data-toggle="collapse"
                         data-target="#bd-main-nav"></button>
-                <a class="navbar-brand hidden-sm-up" href="/">NewsCMS</a>
+                <a class="navbar-brand hidden-sm-up" href="/">App</a>
             </div>
             <div class="collapse navbar-toggleable-xs" id="bd-main-nav">
                 <nav class="navbar navbar-light bg-faded">
-                    <a class="navbar-brand" href="#">NewsCMS</a>
+                    <a class="navbar-brand" href="#">App</a>
                     <ul class="nav navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -38,8 +38,8 @@
 
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-3">NewsCMS - Coming Soon</h1>
-                <p class="lead">NewsCMS is the fist of it's kind live update blog/news site. Unlike most CMS NewsCMS
+                <h1 class="display-3">App - Coming Soon</h1>
+                <p class="lead">App is the fist of it's kind live update blog/news site. Unlike most CMS App
                     updates the homepage and category pages live without refreshing the page.</p>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace NewsCMS;
+namespace App;
 
 use Cartalyst\Sentinel\Permissions\PermissibleInterface;
 use Cartalyst\Sentinel\Permissions\PermissibleTrait;
@@ -11,7 +11,7 @@ use Cartalyst\Sentinel\Users\UserInterface;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * NewsCMS\User
+ * App\User
  *
  * @property integer $id
  * @property string $email
@@ -28,16 +28,16 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \Illuminate\Database\Eloquent\Collection|\Cartalyst\Sentinel\Reminders\EloquentReminder[] $reminders
  * @property-read \Illuminate\Database\Eloquent\Collection|\Cartalyst\Sentinel\Roles\EloquentRole[] $roles
  * @property-read \Illuminate\Database\Eloquent\Collection|\Cartalyst\Sentinel\Throttling\EloquentThrottle[] $throttle
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereEmail($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User wherePassword($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User wherePermissions($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereLastLogin($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereFirstName($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereLastName($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereUsername($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereCreatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\User whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereEmail($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User wherePassword($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User wherePermissions($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereLastLogin($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereFirstName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereLastName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereUsername($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class User extends Model implements RoleableInterface, PermissibleInterface, PersistableInterface, UserInterface
@@ -217,7 +217,7 @@ class User extends Model implements RoleableInterface, PermissibleInterface, Per
 
     public function posts()
     {
-        $this->hasMany('NewsCMS\Posts');
+        $this->hasMany('App\Posts');
     }
 
     /**

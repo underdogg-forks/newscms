@@ -1,12 +1,12 @@
 <?php
 
-namespace NewsCMS;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * NewsCMS\Posts
+ * App\Posts
  *
  * @property integer $id
  * @property string $slug
@@ -18,21 +18,21 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * @property \Carbon\Carbon $deleted_at
- * @property-read \NewsCMS\Categories $category
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereSlug($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereTitle($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereHeaderImage($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereContent($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereUserId($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereCategoryId($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereCreatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereUpdatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts whereDeletedAt($value)
+ * @property-read \App\Categories $category
+ * @method static \Illuminate\Database\Query\Builder|\App\Posts whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Posts whereSlug($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Posts whereTitle($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Posts whereHeaderImage($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Posts whereContent($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Posts whereUserId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Posts whereCategoryId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Posts whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Posts whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Posts whereDeletedAt($value)
  * @mixin \Eloquent
  * @property string $published_at
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Posts wherePublishedAt($value)
- * @property-read \NewsCMS\User $author
+ * @method static \Illuminate\Database\Query\Builder|\App\Posts wherePublishedAt($value)
+ * @property-read \App\User $author
  */
 class Posts extends Model
 {
@@ -44,11 +44,11 @@ class Posts extends Model
 
     public function category()
     {
-        return $this->belongsTo('NewsCMS\Categories');
+        return $this->belongsTo('App\Categories');
     }
 
     public function author()
     {
-        return $this->belongsTo('NewsCMS\User');
+        return $this->belongsTo('App\User');
     }
 }

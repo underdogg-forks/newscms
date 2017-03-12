@@ -1,8 +1,8 @@
 <?php
 
-namespace NewsCMS\Listeners\Auth;
+namespace App\Listeners\Auth;
 
-use NewsCMS\Events\Auth\Logout;
+use App\Events\Auth\Logout;
 
 class LogoutListener
 {

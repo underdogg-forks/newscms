@@ -8,7 +8,7 @@ return [
 
     'cache' => [
         'enabled' => false,
-        'key' => 'newscms.themes',
+        'key' => 'catchupcms.themes',
         'lifetime' => 86400,
     ],
 

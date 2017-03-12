@@ -1,11 +1,11 @@
 <?php
 
-namespace NewsCMS\Http\Controllers;
+namespace App\Http\Controllers;
 
-use NewsCMS\Categories;
-use NewsCMS\Http\Requests;
-use NewsCMS\Posts;
-use NewsCMS\User;
+use App\Categories;
+use App\Http\Requests;
+use App\Posts;
+use App\User;
 
 class PostsController extends Controller
 {

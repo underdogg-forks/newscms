@@ -1,14 +1,14 @@
 <?php
 
-namespace NewsCMS\Http\Controllers;
+namespace App\Http\Controllers;
 
-use NewsCMS\Http\Requests;
+use App\Http\Requests;
 
 class UtilController extends Controller
 {
     public function manifest()
     {
-        $asset_path = config('newscms.favicon.path');
+        $asset_path = config('catchupcms.favicon.path');
         $icons = [
             [
                 'src' => \Theme::asset($asset_path . 'android-chrome-36x36.png'),
@@ -47,6 +47,6 @@ class UtilController extends Controller
                 'density' => 4
             ],
         ];
-        return response()->json(['name' => config('newscms.company.name'), 'icons' => $icons]);
+        return response()->json(['name' => config('catchupcms.company.name'), 'icons' => $icons]);
     }
 }

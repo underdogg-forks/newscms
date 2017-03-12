@@ -76,6 +76,6 @@ return [
     |
     */
 
-    'prefix' => 'newscms',
+    'prefix' => 'catchupcms',
 
 ];

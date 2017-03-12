@@ -1,11 +1,11 @@
 <?php
 
-namespace NewsCMS\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
-use NewsCMS\Events\Auth\Login;
-use NewsCMS\Events\Auth\Logout;
-use NewsCMS\Http\Controllers\Controller;
-use NewsCMS\Http\Requests\LoginRequest;
+use App\Events\Auth\Login;
+use App\Events\Auth\Logout;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
 
 class AuthController extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace NewsCMS\Console\Commands;
+namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
@@ -11,7 +11,7 @@ class NewUser extends Command
      *
      * @var string
      */
-    protected $signature = 'newscms:newuser 
+    protected $signature = 'catchupcms:newuser 
     {--e|email= : Users email} 
     {--p|password= : Users password} 
     {--f|first_name= : Users first name} 

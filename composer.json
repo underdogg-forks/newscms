@@ -1,10 +1,10 @@
 {
-  "name": "tankerkiller125/newscms",
-  "description": "NewsCMS",
+  "name": "tankerkiller125/catchupcms",
+  "description": "App",
   "keywords": [
     "content management",
     "laravel",
-    "newscms",
+    "catchupcms",
     "news",
     "cms"
   ],
@@ -43,7 +43,7 @@
       "database"
     ],
     "psr-4": {
-      "NewsCMS\\": "app/",
+      "App\\": "app/",
       "Modules\\": "Modules/"
     }
   },

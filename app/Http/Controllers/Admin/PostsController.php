@@ -1,13 +1,13 @@
 <?php
 
-namespace NewsCMS\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
-use NewsCMS\Events\Article\Create;
-use NewsCMS\Events\Article\Delete;
-use NewsCMS\Events\Article\Update;
-use NewsCMS\Http\Controllers\Controller;
-use NewsCMS\Http\Requests;
-use NewsCMS\Posts;
+use App\Events\Article\Create;
+use App\Events\Article\Delete;
+use App\Events\Article\Update;
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Posts;
 
 class PostsController extends Controller
 {

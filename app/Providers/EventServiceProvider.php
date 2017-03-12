@@ -1,6 +1,6 @@
 <?php
 
-namespace NewsCMS\Providers;
+namespace App\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -14,24 +14,24 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         // Articles
-        'NewsCMS\Events\Article\Create' => [
-            'NewsCMS\Listeners\Article\CreateListener',
+        'App\Events\Article\Create' => [
+            'App\Listeners\Article\CreateListener',
         ],
-        'NewsCMS\Events\Article\Update' => [
-            'NewsCMS\Listeners\Article\UpdateListener',
+        'App\Events\Article\Update' => [
+            'App\Listeners\Article\UpdateListener',
         ],
-        'NewsCMS\Events\Article\Delete' => [
-            'NewsCMS\Listeners\Article\DeleteListener',
+        'App\Events\Article\Delete' => [
+            'App\Listeners\Article\DeleteListener',
         ],
-        'NewsCMS\Events\Article\Publish' => [
-            'NewsCMS\Listeners\Article\PublishListener',
+        'App\Events\Article\Publish' => [
+            'App\Listeners\Article\PublishListener',
         ],
         // Authentication
-        'NewsCMS\Events\Auth\Login' => [
-            'NewsCMS\Listeners\Auth\LoginListener'
+        'App\Events\Auth\Login' => [
+            'App\Listeners\Auth\LoginListener'
         ],
-        'NewsCMS\Events\Auth\Logout' => [
-            'NewsCMS\Listeners\Auth\LogoutListener'
+        'App\Events\Auth\Logout' => [
+            'App\Listeners\Auth\LogoutListener'
         ]
     ];
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace NewsCMS\Events\Article;
+namespace App\Events\Article;
 
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Queue\SerializesModels;
-use NewsCMS\Events\Event;
+use App\Events\Event;
 
 class Update extends Event implements ShouldBroadcast
 {

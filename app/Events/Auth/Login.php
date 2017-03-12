@@ -1,9 +1,9 @@
 <?php
 
-namespace NewsCMS\Events\Auth;
+namespace App\Events\Auth;
 
 use Illuminate\Queue\SerializesModels;
-use NewsCMS\Events\Event;
+use App\Events\Event;
 
 class Login extends Event
 {

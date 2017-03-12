@@ -1,10 +1,10 @@
 <?php
 
-namespace NewsCMS\Listeners\Article;
+namespace App\Listeners\Article;
 
-use NewsCMS\Events\Article\Create;
-use NewsCMS\Events\Article\Publish;
-use NewsCMS\Posts;
+use App\Events\Article\Create;
+use App\Events\Article\Publish;
+use App\Posts;
 
 class CreateListener
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace NewsCMS\Listeners\Article;
+namespace App\Listeners\Article;
 
-use NewsCMS\Events\Article\Publish;
+use App\Events\Article\Publish;
 
 class PublishListener
 {

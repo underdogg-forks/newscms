@@ -151,10 +151,10 @@ return [
         /*
          * Application Service Providers...
          */
-        NewsCMS\Providers\AppServiceProvider::class,
-        NewsCMS\Providers\AuthServiceProvider::class,
-        NewsCMS\Providers\EventServiceProvider::class,
-        NewsCMS\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
         /*
          * Custom Stuff

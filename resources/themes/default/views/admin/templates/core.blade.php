@@ -1,7 +1,7 @@
 <!DOCYTYPE html>
 <html>
     <head>
-        <title>{{ config('newscms.company.name') }} — Admin</title>
+        <title>{{ config('catchupcms.company.name') }} — Admin</title>
         <meta charset="utf-8">
         <meta title="description" content="Description of Blog">
 

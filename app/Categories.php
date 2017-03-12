@@ -1,11 +1,11 @@
 <?php
 
-namespace NewsCMS;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * NewsCMS\Categories
+ * App\Categories
  *
  * @property integer $id
  * @property string $name
@@ -14,14 +14,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $slug
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\NewsCMS\Posts[] $posts
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Categories whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Categories whereName($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Categories whereHeaderImage($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Categories whereDescription($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Categories whereSlug($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Categories whereCreatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\NewsCMS\Categories whereUpdatedAt($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Posts[] $posts
+ * @method static \Illuminate\Database\Query\Builder|\App\Categories whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Categories whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Categories whereHeaderImage($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Categories whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Categories whereSlug($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Categories whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Categories whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Categories extends Model
@@ -32,6 +32,6 @@ class Categories extends Model
 
     public function posts()
     {
-        return $this->hasMany('NewsCMS\Posts', 'category_id', 'id');
+        return $this->hasMany('App\Posts', 'category_id', 'id');
     }
 }
